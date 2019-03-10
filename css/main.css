@@ -1,0 +1,10 @@
+.vrteska {
+    height: 50vh;
+    width: 100%;
+}
+.slikaNaucnik {
+    height: 200px;
+    width: 150px;
+    float: left;
+    margin: 2%;
+}
