@@ -1,7 +1,6 @@
 var greska = document.getElementById('greska');
 var naucnik = {};
 var naucnici = [];
-var dohvaceni = false;
 
 function prov_imena(){
     var ime = document.getElementById('name').value;
@@ -74,11 +73,10 @@ function dohvati(){
     return p;
 }
 function smesti_naucnika(naucnik){
-    dohvaceni = false;
     var p = dohvati();
     if(p != null){
         p.push(naucnik);
-        za_smestanje = JSON.stringify(p);
+        var za_smestanje = JSON.stringify(p);
     }else{
         naucnici.push(naucnik);
         za_smestanje = JSON.stringify(naucnici);
