@@ -7,10 +7,11 @@
     <title>Biografije naucnika</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Courgette" rel="stylesheet">
 </head>
 <body>
     <header id="head" class="nav justify-content-center bg-secondary text-light">
-        <div id="headline" class="p-1">
+        <div id="headline" class="p-3">
             <h1>Biografije naučnika</h1>
         </div>
     </header>
@@ -105,46 +106,54 @@
             </div>
         </main>
         <section class="p-3">
-            <div id="forma">
-                <h6>Prijava za naučnike:</h6>
-                <p id="greska" class="text-danger"></p>
-                <form id="f" onsubmit="return provera()">
-                    <div class="form-group">
-                        <label for="name">Ime:</label><br>
-                        <input type="text" id="name" name="name">
-                    </div>
-                    <div class="form-group">
-                        <label for="lastName">Prezime:</label><br>
-                        <input type="text" id="lastName" name="lastName">
-                    </div>
-                    <div class="form-group">
-                        <label for="city">Grad:</label><br>
-                        <input type="text" id="city" name="city">
-                    </div>
-                    <div class="form-group">
-                        <label for="paper">Naucni rad:</label><br>
-                        <input type="text" id="paper" name="paper">
-                    </div>
-                    <div class="form-group">
-                        <span>Da li je rad doktorski:</span>
-                        <label for="da">Da</label>
-                        <input type="radio" name="rad" id="da" value="Da">
-                        <label for="ne">Ne</label>
-                        <input type="radio" name="rad" id="ne" value="Ne">
-                    </div>
-                    <div class="form-group">
-                        <label for="opis">Kratak opis rada:</label><br>
-                        <textarea name="Opis" id="opis" cols="30" rows="5"></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Potvrdi</button>
-                    <button type="reset" class="btn btn-danger">Ponisti</button>
-                </form>
-            </div>
-            <div id="video">
-
-            </div>
-            <div id="linkovi">
-
+          <div id="forma" class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 my-2">
+              <h6>Prijava za naučnike:</h6>
+              <p id="greska" class="text-danger"></p>
+              <form onsubmit="return provera()">
+                  <div class="form-group">
+                      <label for="name">Ime:</label><br>
+                      <input type="text" id="name" name="name" maxlength="20">
+                  </div>
+                  <div class="form-group">
+                      <label for="lastName">Prezime:</label><br>
+                      <input type="text" id="lastName" name="lastName" maxlength="20">
+                  </div>
+                  <div class="form-group">
+                      <label for="city">Grad:</label><br>
+                      <input type="text" id="city" name="city" maxlength="20">
+                  </div>
+                  <div class="form-group">
+                      <label for="paper">Naucni rad:</label><br>
+                      <input type="text" id="paper" name="paper" maxlength="50">
+                  </div>
+                  <div class="form-group">
+                      <label for="rad">Da li je rad doktorski:</label>
+                      <input type="radio" name="rad" id="rad" value="Da">Da
+                      <input type="radio" name="rad" id="rad" value="Ne">Ne
+                  </div>
+                  <div class="form-group">
+                      <label for="opis">Kratak opis rada:</label><br>
+                      <textarea name="Opis" id="opis" cols="30" rows="5" maxlength="200"></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Potvrdi</button>
+                  <button type="reset" class="btn btn-danger">Ponisti</button>
+              </form>
+          </div>
+          <div id="lista" class="table-responsive-sm mt-3">
+            <button id="prikazi" class='btn btn-primary'>Izlistaj naučnike</button>
+            <p id="greska2" class="text-danger"></p>
+              <table id='tabela'>
+                <thead></thead>
+                  <tr>
+                    <th>Ime</th>
+                    <th>Prezime</th>
+                    <th>Grad</th>
+                    <th>Naučni rad</th>
+                    <th>Da li je doktorat</th>
+                    <th>Kratak opis</th>
+                  </tr>
+                </thead>
+            </table>
             </div>
         </section>
     </div>

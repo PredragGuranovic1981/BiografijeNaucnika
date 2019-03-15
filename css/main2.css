@@ -1,3 +1,4 @@
+/* --- Slike u main-u start --- */
 #dete {
     width: 200px;
     height: 300px;
@@ -6,6 +7,9 @@
     width: 500px;
     height: 500px;
 }
+/* --- Slike u main-u end --- */
+
+/* --- Navigacija start --- */
 .navigacija li {
     display: inline-block;
     margin-right: 2%;
@@ -19,10 +23,15 @@
     color: #ccc;
     text-decoration: none;
 }
+/* --- Navigacija end --- */
+
+/* --- Slike u tesla.html --- */
 .izumi {
     width: 250px;
     height: 280px;
 }
+
+/* --- Responsiv video --- */
 .omotac {
     position: relative;
     padding-top: 56.25%;
@@ -33,6 +42,6 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 70%;
     border: 0;
 }

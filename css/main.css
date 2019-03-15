@@ -1,10 +1,43 @@
+/* --- Header settings --- */
+#headline {
+    font-family: 'Courgette', cursive;
+    text-shadow: 4px 4px 4px #aaa;
+    position: relative;
+    -webkit-animation: mymove; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 3s; /* Safari 4.0 - 8.0 */
+    animation: mymove;
+    animation-duration: 3s;
+}
+@-webkit-keyframes mymove {
+    from {top: -200px;}
+    to {top: 0px;}
+  }
+  
+  @keyframes mymove {
+    from {top: -200px;}
+    to {top: 0px;}
+  }
+/* --- Podesavanje slika u karoselu --- */
 .vrteska {
     height: 50vh;
     width: 100%;
 }
+/* --- Podesavanje slika naucnika u main-u --- */
 .slikaNaucnik {
     height: 200px;
     width: 150px;
     float: left;
     margin: 2%;
+}
+
+/* --- Tabela settings --- */
+#tabela {
+    width: 100%;
+}
+#tabela tr:first-child th {
+    border: 1px solid black;
+    text-align: center;
+}
+#tabela td {
+    text-align: center;
 }

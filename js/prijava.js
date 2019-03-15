@@ -1,6 +1,59 @@
 var greska = document.getElementById('greska');
+var greska2 = document.getElementById('greska2');
 var naucnik = {};
 var naucnici = [];
+var dohvaceni = false;
+document.getElementById('prikazi').addEventListener("click", izlistaj);
+
+function izlistaj(){
+    if(!dohvaceni){
+        var p = dohvati();
+        if(p == null){
+            greska.innerHTML = "Nema podataka";
+        }else{
+            for(i=0; i < p.length; i++){
+                kreiraj_tabelu(p[i],'tabela');
+            }
+        }
+    }
+    var lista = document.getElementById('lista');
+    lista.className = "shown";
+    dohvaceni = true;
+    return;
+}
+
+function kreiraj_tabelu(osoba, t){
+    var tabela = document.getElementById(t);
+    var red = document.createElement('tr');
+    tabela.appendChild(red);
+    for(svojstvo in osoba){
+        var kol = document.createElement("td");
+        kol.innerHTML = osoba[svojstvo];
+        red.appendChild(kol);
+    }
+    return;
+}
+        
+function dohvati(){
+    var za_dohvatanje = localStorage.getItem("naucnici");
+    var p = JSON.parse(za_dohvatanje);
+    console.log(p);
+    return p;
+}
+function smesti_naucnika(naucnik){
+    dohvaceni = false;
+    var p = dohvati();
+    if(p != null){
+        p.push(naucnik);
+        za_smestanje = JSON.stringify(p);
+    }else{
+        naucnici.push(naucnik);
+        za_smestanje = JSON.stringify(naucnici);
+    }
+    localStorage.setItem("naucnici", za_smestanje);
+    return;
+}
+
 
 function prov_imena(){
     var ime = document.getElementById('name').value;
@@ -9,6 +62,7 @@ function prov_imena(){
         greska.innerHTML = "Pogresno uneto ime!";
         return false;
     }else {
+        naucnik.ime = ime;
         return true;
     }
 }
@@ -20,6 +74,7 @@ function prov_prezimena(){
         greska.innerHTML = "Pogresno uneto prezime!";
         return false;
     }else {
+        naucnik.prezime = prezime;
         return true;
     }
 }
@@ -31,6 +86,7 @@ function prov_grada(){
         greska.innerHTML = "Pogresno uneto ime grada!";
         return false;
     }else {
+        naucnik.grad = grad;
         return true;
     }
 }
@@ -42,6 +98,7 @@ function prov_rad(){
         greska.innerHTML = "Pogresno uneto ime naucnog rada!";
         return false;
     }else {
+        naucnik.rad = rad;
         return true;
     }
 }
@@ -49,8 +106,10 @@ function prov_rad(){
 function prov_naucniRad(){
     var naucni = document.querySelectorAll("input[name='rad']");
     for(i in naucni){
-        if(naucni[i].checked)
+        if(naucni[i].checked){
+        naucnik.naucni = naucni[i].value;
         return true;
+        }
     }
     greska.innerHTML = "Nije odabrano da li je naucni rad doktorski!";
     return false;
@@ -62,27 +121,9 @@ function prov_opis(){
         greska.innerHTML = "Niste dali kratak opis rada!";
         return false;
     }else {
+        naucnik.opis = opis;
         return true;
     }
-}
-
-function dohvati(){
-    var za_dohvatanje = localStorage.getItem("naucnici");
-    var p = JSON.parse(za_dohvatanje);
-    console.log(p);
-    return p;
-}
-function smesti_naucnika(naucnik){
-    var p = dohvati();
-    if(p != null){
-        p.push(naucnik);
-        var za_smestanje = JSON.stringify(p);
-    }else{
-        naucnici.push(naucnik);
-        za_smestanje = JSON.stringify(naucnici);
-    }
-    localStorage.setItem("naucnici", za_smestanje);
-    return;
 }
 
 function provera(){
