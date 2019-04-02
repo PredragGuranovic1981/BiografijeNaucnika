@@ -22,6 +22,19 @@
     height: 50vh;
     width: 100%;
 }
+#srb {
+    position: relative;
+}
+#eur {
+    position: relative;
+}
+#world {
+    position: relative;
+}
+.link {
+    position: absolute;
+    bottom: -25px;
+}
 /* --- Podesavanje slika naucnika u main-u --- */
 .slikaNaucnik {
     height: 200px;

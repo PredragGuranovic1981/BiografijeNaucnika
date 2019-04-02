@@ -9,13 +9,13 @@
     <link rel="stylesheet" href="css/main2.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand- navbar-dark bg-secondary text-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary text-light">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navig" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navig">
-            <ul class="navigacija navbar-nav">
-                <li class="nav-item"><a class="nav-link" href="./index.html">Povratak na naslovnu stranu</a></li>
+        <div class="navbar-collapse" id="navig">
+            <ul class="navigacija navbar-collapse m-auto">
+                <li class="nav-item"><a class="nav-link" href="./index.html">Početna strana</a></li>
                 <li class="nav-item"><a class="nav-link" href="#detinjstvo">Detinjstvo i obrazovanje</a></li>
                 <li class="nav-item"><a class="nav-link" href="#nauka">Naučni rad</a></li>
             </ul>
@@ -25,10 +25,12 @@
         </div>
     </nav>
     <header>
-        <div id="headline" class="container">
+        <div class="container">
             <h1>Nikola Tesla</h1>
-            <img src="images/nikola_tesla.jpg" alt="Nikola Tesla">
-            <p>Nikola Tesla (Smiljan, 10.7. 1856. - New York, 7.1. 1943.)</p>
+        </div>
+        <div id="headline" class="container d-flex">
+            <img src="images/nikola_tesla.jpg" alt="Nikola Tesla" id="portret">
+            <h5 id="tekst">Nikola Tesla (Smiljan, 10.7. 1856. - New York, 7.1. 1943.)</h5>
         </div>
     </header>
     <main>
